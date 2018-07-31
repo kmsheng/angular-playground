@@ -1,3 +1,9 @@
-<p>
-  todos works!
-</p>
+<form name="form" (ngSubmit)="addTodo()" #form="ngForm">
+  <input name="todo-input" [(ngModel)]="todoText" required />
+  <ul>
+    <li *ngFor="let todoText of todoTexts; let i = index">#{{i + 1}} - {{todoText}}</li>
+  </ul>
+  <div>
+    <button type="button" (click)="clearTodos()">clear</button>
+  </div>
+</form>

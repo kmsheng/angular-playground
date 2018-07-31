@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
+  todoText: string;
+
+  todoTexts: Array<string> = [];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  addTodo() {
+    this.todoTexts.push(this.todoText);
+    this.todoText = '';
+  }
+
+  clearTodos() {
+    this.todoTexts.length = 0;
+  }
 }
