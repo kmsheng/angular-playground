@@ -7,13 +7,15 @@ import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageTodosComponent } from './page-todos/page-todos.component';
+import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     TodoItemComponent,
-    PageTodosComponent
+    PageTodosComponent,
+    PageHelloWorldComponent
   ],
   imports: [
     BrowserModule,
