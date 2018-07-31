@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageTodosComponent } from './page-todos/page-todos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    PageTodosComponent
   ],
   imports: [
     BrowserModule,
