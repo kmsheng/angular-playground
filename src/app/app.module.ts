@@ -8,6 +8,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.component';
+import { PageCounterComponent } from './page-counter/page-counter.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.com
     TodosComponent,
     TodoItemComponent,
     PageTodosComponent,
-    PageHelloWorldComponent
+    PageHelloWorldComponent,
+    PageCounterComponent
   ],
   imports: [
     BrowserModule,
