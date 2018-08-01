@@ -11,7 +11,7 @@ export class CounterEffects {
 
   // Listen for the 'INCREMENT' action
   @Effect()
-  login$: Observable<Action> = this.actions$.pipe(
+  count$: Observable<Action> = this.actions$.pipe(
     ofType('INCREMENT'),
     tap(action => {
       console.log('this.state$', this.state$);
