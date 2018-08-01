@@ -12,6 +12,8 @@ import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
 import { counterReducer } from './reducers/counter';
 import { StoreModule } from '@ngrx/store';
+import { CounterEffects } from './effects/counter.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    StoreModule.forRoot({count: counterReducer})
+    StoreModule.forRoot({count: counterReducer}),
+    EffectsModule.forRoot([CounterEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
