@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { INCREMENT } from './../reducers/counter';
 
 @Component({
   selector: 'app-counter',
@@ -7,15 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
-  count: number = 0;
+  count$: Observable<number>;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    this.count$ = store.pipe(select('count'));
+  }
 
   ngOnInit() {
   }
 
   increase() {
-    this.count += 1;
+    this.store.dispatch({type: INCREMENT});
   }
 
 }

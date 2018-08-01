@@ -10,6 +10,8 @@ import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.component';
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
+import { counterReducer } from './reducers/counter';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CounterComponent } from './counter/counter.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({count: counterReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
