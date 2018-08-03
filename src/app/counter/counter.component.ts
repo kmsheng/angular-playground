@@ -21,7 +21,7 @@ export class CounterComponent implements OnInit {
   }
 
   increase() {
-    this.store.dispatch({type: INCREMENT});
+    this.store.dispatch({type: 'DELAY_INCREMENT'});
   }
 
 }

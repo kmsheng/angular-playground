@@ -8,6 +8,7 @@ const initialState = 0;
 
 export function counterReducer(state: number = initialState, action: Action) {
   switch (action.type) {
+
     case INCREMENT:
       return state + 1;
 
