@@ -1,0 +1,48 @@
+.main__background {
+  $bg-angle: #60c4b1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  padding: 30px 40px;
+
+  // inspired by https://www.behance.net/gallery/
+  // 60437071/Collection-of-all-SaaS-and-Enterprise-design-2018
+  &:before {
+    position: absolute;
+    top: -40px;
+    left: -250px;
+    display: block;
+    content: ' ';
+    width: 570px;
+    height: 570px;
+    background-color: $bg-angle;
+    transform: rotate(140deg);
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    bottom: 0;
+    transform: rotate(45deg);
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    content: ' ';
+    width: 200px;
+    height: 200px;
+    background-color: $bg-angle;
+  }
+}
+
+.main__page {
+  margin: 80px 40px;
+  padding: 21px;
+  min-height: 400px;
+  border: 1px solid #e6e6e6;
+  border-radius: 7px;
+  background-color: #fff;
+}
