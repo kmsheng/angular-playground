@@ -14,6 +14,7 @@ import { counterReducer } from './reducers/counter';
 import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EffectsModule } from '@ngrx/effects';
     PageTodosComponent,
     PageHelloWorldComponent,
     PageCounterComponent,
-    CounterComponent
+    CounterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

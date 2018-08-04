@@ -1,0 +1,14 @@
+.nav {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #c0c5d0;
+  display: inline-block;
+  margin: 0 14px;
+  &:hover {
+    color: #999faa;
+  }
+}
