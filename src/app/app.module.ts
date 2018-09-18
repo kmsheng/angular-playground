@@ -17,6 +17,7 @@ import { CounterEffects } from './effects/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PageSecretComponent } from './page-secret/page-secret.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     PageCounterComponent,
     CounterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    PageSecretComponent
   ],
   imports: [
     BrowserModule,
