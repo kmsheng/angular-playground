@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
@@ -33,7 +34,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    StoreModule.forRoot({count: counterReducer}),
+    StoreModule.forRoot({
+      count: counterReducer,
+      router: routerReducer
+    }),
+    StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([CounterEffects])
   ],
   providers: [],
