@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AuthActionTypes } from '../reducers/auth';
+import { State, AuthActionTypes } from '../reducers/auth';
 
 @Component({
   selector: 'app-page-login',
@@ -10,7 +10,7 @@ import { AuthActionTypes } from '../reducers/auth';
 })
 export class PageLoginComponent implements OnInit {
 
-  constructor(private store: Store<'auth'>) {
+  constructor(private store: Store<State>) {
   }
 
   ngOnInit() {
