@@ -18,6 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageSecretComponent } from './page-secret/page-secret.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PageSecretComponent } from './page-secret/page-secret.component';
     CounterComponent,
     NavbarComponent,
     SidebarComponent,
-    PageSecretComponent
+    PageSecretComponent,
+    PageLoginComponent
   ],
   imports: [
     BrowserModule,
