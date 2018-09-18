@@ -4,13 +4,14 @@ import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.com
 import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { PageSecretComponent } from './page-secret/page-secret.component';
+import { AuthGuard } from './auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'counter', pathMatch: 'full' },
   { path: 'helloworld', component: PageHelloWorldComponent },
   { path: 'todos', component: PageTodosComponent },
   { path: 'counter', component: PageCounterComponent },
-  { path: 'secret', component: PageSecretComponent }
+  { path: 'secret', component: PageSecretComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
