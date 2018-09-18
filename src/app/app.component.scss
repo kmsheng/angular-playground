@@ -40,9 +40,13 @@
 
 .main__page {
   margin: 80px 40px;
-  padding: 21px;
-  min-height: 400px;
   border: 1px solid #e6e6e6;
   border-radius: 7px;
   background-color: #fff;
+}
+
+.page__content {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 400px;
 }

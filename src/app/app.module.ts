@@ -15,6 +15,7 @@ import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     PageHelloWorldComponent,
     PageCounterComponent,
     CounterComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
