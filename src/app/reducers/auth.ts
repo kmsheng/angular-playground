@@ -27,6 +27,8 @@ export class ActionLoginRedirect implements Action {
   readonly type = AuthActionTypes.LoginRedirect;
 }
 
+type Actions = ActionLogin | ActionLoginSuccess | ActionLoginFailure | ActionLoginRedirect;
+
 export interface State {
   user: User | null;
 }
@@ -35,14 +37,13 @@ export const initialState: State = {
   user: null
 };
 
-export function authReducer(state: object = initialState, action: Action) {
+export function authReducer(state: object = initialState, action: Actions) {
 
   switch (action.type) {
     case AuthActionTypes.Login:
       break;
     case AuthActionTypes.LoginSuccess:
-      console.log('action', action.payload);
-      return {...state, user: {}};
+      return {...state, user: action.payload.user};
     case AuthActionTypes.LoginFailure:
       break;
     default:
