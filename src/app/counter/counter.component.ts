@@ -6,12 +6,8 @@ import { CounterState } from './../types';
 
 @Component({
   selector: 'app-counter',
-  template: `
-    <div>
-      <div>{{count$ | async}}</div>
-      <button type="button" (click)="increase()">increase</button>
-    </div>
-  `
+  templateUrl: './counter.component.html',
+  styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnInit {
 
