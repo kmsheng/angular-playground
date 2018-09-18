@@ -4,6 +4,7 @@ import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.com
 import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { PageSecretComponent } from './page-secret/page-secret.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 import { AuthGuard } from './auth-guard.service';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'helloworld', component: PageHelloWorldComponent },
   { path: 'todos', component: PageTodosComponent },
   { path: 'counter', component: PageCounterComponent },
+  { path: 'login', component: PageLoginComponent },
   { path: 'secret', component: PageSecretComponent, canActivate: [AuthGuard] }
 ];
 

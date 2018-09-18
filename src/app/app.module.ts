@@ -12,8 +12,10 @@ import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.com
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
 import { counterReducer } from './reducers/counter';
+import { authReducer } from './reducers/auth';
 import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';
+import { AuthEffects } from './effects/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -40,10 +42,11 @@ import { PageLoginComponent } from './page-login/page-login.component';
     AppRoutingModule,
     StoreModule.forRoot({
       count: counterReducer,
+      auth: authReducer,
       router: routerReducer
     }),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([CounterEffects])
+    EffectsModule.forRoot([CounterEffects, AuthEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
