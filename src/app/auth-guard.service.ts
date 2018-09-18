@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { State } from './reducers/auth';
+import { State, ActionLoginRedirect } from './reducers/auth';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -17,11 +17,11 @@ export class AuthGuard implements CanActivate {
     return this.store.pipe(
       select('auth'),
       map(auth => {
-        if (! auth.user) {
-          this.store.dispatch({type: 'LOGIN_REDIRECT'});
-          return false;
+        if (auth.user) {
+          return true;
         }
-        return true;
+        this.store.dispatch(new ActionLoginRedirect());
+        return false;
       }),
       take(1)
     );

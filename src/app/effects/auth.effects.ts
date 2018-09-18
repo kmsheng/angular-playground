@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Observable, of } from 'rxjs';
-import { filter, catchError, map, mergeMap, switchMap, tap, delay} from 'rxjs/operators';
-import { CounterState } from './../types';
+import { Observable, of, throwError } from 'rxjs';
+import { filter, catchError, map, mergeMap, switchMap, tap, delay, exhaustMap} from 'rxjs/operators';
 import { Store } from '@ngrx/store';
+import { AuthActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth';
+import { Credentials } from '../models/user';
 
 @Injectable()
 export class AuthEffects {
@@ -15,9 +15,22 @@ export class AuthEffects {
     private router: Router
   ) {}
 
-  @Effect({dispatch: false})
+  @Effect()
+  login$ = this.actions$.pipe(
+    ofType<ActionLogin>(AuthActionTypes.Login),
+    map(action => action.payload),
+    exhaustMap((credentials: Credentials) => {
+      // fake login
+      if ((credentials.username === 'test') && (credentials.password === 'test')) {
+        return of(new ActionLoginSuccess({user: {username: 'test'}}));
+      }
+      return throwError('Invalid username and password');
+    })
+  );
+
+  @Effect({ dispatch: false })
   loginRedirect$ = this.actions$.pipe(
-    ofType('LOGIN_REDIRECT'),
+    ofType<ActionLoginRedirect>(AuthActionTypes.LoginRedirect),
     tap(action => {
       this.router.navigate(['/login']);
     })

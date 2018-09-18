@@ -1,3 +1,17 @@
-<p>
-  page-login works!
-</p>
+<div class="page-login">
+  <form class="page-login__form" #form="ngForm" (ngSubmit)="handleSubmit(form)">
+    <label>
+      <span>username</span>
+      <input type="text" name="username" ngModel required />
+    </label>
+
+    <label>
+      <span>password</span>
+      <input type="password" name="password" ngModel required />
+    </label>
+    <div class="btn-wrap">
+      <button class="btn-submit" type="submit">login</button>
+    </div>
+  </form>
+  <p>username and password: test / test</p>
+</div>

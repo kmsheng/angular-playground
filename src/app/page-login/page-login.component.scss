@@ -1,0 +1,16 @@
+.page-login {
+  padding: 14px;
+}
+.page-login__form {
+  label {
+    display: block;
+    margin: 7px 0;
+    span {
+      padding-right: 14px;
+    }
+  }
+  .btn-wrap {
+    text-align: right;
+    margin-top: 14px;
+  }
+}
