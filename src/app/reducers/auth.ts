@@ -6,6 +6,7 @@ export enum AuthActionTypes {
   LoginSuccess = '[Auth] Login Success',
   LoginFailure = '[Auth] Login Failure',
   LoginRedirect = '[Auth] Login Redirect',
+  SaveUrl = '[Auth] Save Url'
 }
 
 export class ActionLogin implements Action {
@@ -27,25 +28,30 @@ export class ActionLoginRedirect implements Action {
   readonly type = AuthActionTypes.LoginRedirect;
 }
 
-type Actions = ActionLogin | ActionLoginSuccess | ActionLoginFailure | ActionLoginRedirect;
+export class ActionSaveUrl implements Action {
+  readonly type = AuthActionTypes.SaveUrl;
+  constructor(public payload: { url?: string }) {}
+}
+
+type Actions = ActionLogin | ActionLoginSuccess | ActionLoginFailure | ActionLoginRedirect | ActionSaveUrl;
 
 export interface State {
   user: User | null;
+  url: String | null;
 }
 
 export const initialState: State = {
-  user: null
+  user: null,
+  url: null
 };
 
 export function authReducer(state: object = initialState, action: Actions) {
 
   switch (action.type) {
-    case AuthActionTypes.Login:
-      break;
     case AuthActionTypes.LoginSuccess:
       return {...state, user: action.payload.user};
-    case AuthActionTypes.LoginFailure:
-      break;
+    case AuthActionTypes.SaveUrl:
+      return {...state, url: action.payload.url};
     default:
       return state;
   }
