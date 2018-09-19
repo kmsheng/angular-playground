@@ -4,6 +4,10 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
+export interface State {
+  count: number;
+}
+
 const initialState = 0;
 
 export function counterReducer(state: number = initialState, action: Action) {
