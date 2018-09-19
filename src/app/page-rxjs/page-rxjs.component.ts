@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { filter, catchError, map, mergeMap, switchMap,
+  tap, delay, exhaustMap, concatMap } from 'rxjs/operators';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Component({
   selector: 'app-page-rxjs',
@@ -7,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageRxjsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
