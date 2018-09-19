@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
@@ -21,6 +23,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageSecretComponent } from './page-secret/page-secret.component';
 import { PageLoginComponent } from './page-login/page-login.component';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,11 @@ import { PageLoginComponent } from './page-login/page-login.component';
       router: routerReducer
     }),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([CounterEffects, AuthEffects])
+    EffectsModule.forRoot([CounterEffects, AuthEffects]),
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
