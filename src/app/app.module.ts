@@ -24,6 +24,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PageSecretComponent } from './page-secret/page-secret.component';
 import { PageLoginComponent } from './page-login/page-login.component';
 import { InMemoryDataService } from './in-memory-data.service';
+import { PageRxjsComponent } from './page-rxjs/page-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     NavbarComponent,
     SidebarComponent,
     PageSecretComponent,
-    PageLoginComponent
+    PageLoginComponent,
+    PageRxjsComponent
   ],
   imports: [
     BrowserModule,
