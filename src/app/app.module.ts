@@ -13,7 +13,7 @@ import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.component';
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
-import { counterReducer } from './reducers/counter';
+import { counterReducer } from './reducers/counter.reducer';
 import { authReducer } from './reducers/auth.reducer';
 import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';

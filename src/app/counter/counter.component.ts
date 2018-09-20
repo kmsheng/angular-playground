@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State, ActionIncrement, ActionDelayIncrement } from './../reducers/counter';
+import { State, ActionIncrement, ActionDelayIncrement } from './../reducers/counter.reducer';
 
 @Component({
   selector: 'app-counter',

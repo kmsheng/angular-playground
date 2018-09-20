@@ -4,7 +4,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of, timer } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, concatMap, tap, delay, debounce} from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { ActionDelayIncrement, ActionIncrement, CounterActionTypes.DELAY_INCREMENT } from '../reducers/counter';
+import { ActionDelayIncrement, ActionIncrement, CounterActionTypes.DELAY_INCREMENT } from '../reducers/counter.reducer';
 
 @Injectable()
 export class CounterEffects {
