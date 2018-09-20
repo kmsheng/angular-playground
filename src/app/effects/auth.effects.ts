@@ -4,7 +4,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of, throwError } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, tap, delay, exhaustMap} from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
-import { State, AuthActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth';
+import { State, AuthActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth.reducer';
 import { Credentials } from '../types';
 
 @Injectable()

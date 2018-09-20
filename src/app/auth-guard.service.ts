@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { State, ActionLoginRedirect, ActionSaveUrl } from './reducers/auth';
+import { State, ActionLoginRedirect, ActionSaveUrl } from './reducers/auth.reducer';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 

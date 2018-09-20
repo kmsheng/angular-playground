@@ -14,7 +14,7 @@ import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.com
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
 import { counterReducer } from './reducers/counter';
-import { authReducer } from './reducers/auth';
+import { authReducer } from './reducers/auth.reducer';
 import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';
 import { AuthEffects } from './effects/auth.effects';
