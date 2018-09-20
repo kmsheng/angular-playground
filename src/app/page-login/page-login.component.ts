@@ -19,8 +19,10 @@ export class PageLoginComponent implements OnInit {
   handleSubmit(form: NgForm) {
     if (form.valid) {
       this.store.dispatch(new ActionLogin({
-        username: form.value.username,
-        password: form.value.password
+        credentials: {
+          username: form.value.username,
+          password: form.value.password
+        }
       }));
     }
   }
