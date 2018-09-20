@@ -1,6 +1,6 @@
 import { ElementRef } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, of, interval, merge, fromEvent, timer, interval } from 'rxjs';
+import { Observable, of, interval, merge, fromEvent, timer } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, mapTo,
   tap, delay, exhaustMap, concatMap, startWith, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
