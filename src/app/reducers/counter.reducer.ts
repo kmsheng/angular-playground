@@ -23,7 +23,7 @@ export class ActionReset implements Action {
 }
 
 export class ActionDelayIncrement implements Action {
-  readonly type = ActionTypes.DELAY_INCREMENT,
+  readonly type = ActionTypes.DELAY_INCREMENT;
   constructor() {}
 }
 
