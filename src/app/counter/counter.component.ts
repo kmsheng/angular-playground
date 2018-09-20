@@ -20,7 +20,7 @@ export class CounterComponent implements OnInit {
   }
 
   increase() {
-    this.store.dispatch({type: 'DELAY_INCREMENT'});
+    this.store.dispatch(new ActionIncrement());
   }
 
 }
