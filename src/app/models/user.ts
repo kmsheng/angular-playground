@@ -6,3 +6,8 @@ export interface Credentials {
 export interface User {
   username: string;
 }
+
+export interface Student {
+  id: number,
+  name: string;
+}
