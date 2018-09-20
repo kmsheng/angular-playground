@@ -1,5 +1,5 @@
 <div>
   <div>{{count$ | async}}</div>
-  <button class="btn" type="button" (click)="increment()">increment</button>
-  <button class="btn" type="button" (click)="delayIncrement()">delay increment</button>
+  <button class="btn" type="button" (click)="increment($event)">increment</button>
+  <button class="btn" type="button" (click)="delayIncrement($event)">delay increment</button>
 </div>

@@ -19,11 +19,13 @@ export class CounterComponent implements OnInit {
   ngOnInit() {
   }
 
-  increment() {
+  increment(event) {
+    event.preventDefault();
     this.store.dispatch(new ActionIncrement());
   }
 
   delayIncrement() {
+    event.preventDefault();
     this.store.dispatch(new ActionDelayIncrement());
   }
 
