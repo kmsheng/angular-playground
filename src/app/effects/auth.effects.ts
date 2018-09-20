@@ -18,7 +18,7 @@ export class AuthEffects {
 
   @Effect()
   login$ = this.actions$.pipe(
-    ofType<ActionLogin>(ActionTypes.Login),
+    ofType<ActionLogin>(ActionTypes.LOGIN),
     map(action => action.payload),
     exhaustMap((credentials: Credentials) => {
       // fake login
@@ -31,7 +31,7 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   loginSuccess$ = this.actions$.pipe(
-    ofType<ActionLoginSuccess>(ActionTypes.LoginSuccess),
+    ofType<ActionLoginSuccess>(ActionTypes.LOGIN_SUCCESS),
     tap(() => {
       this.store.pipe(select('auth')).subscribe(auth => {
         if (auth.url) {
@@ -43,7 +43,7 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   loginRedirect$ = this.actions$.pipe(
-    ofType<ActionLoginRedirect>(ActionTypes.LoginRedirect),
+    ofType<ActionLoginRedirect>(ActionTypes.LOGIN_REDIRECT),
     tap(action => {
       this.router.navigate(['/login']);
     })

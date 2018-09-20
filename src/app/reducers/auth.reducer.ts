@@ -2,34 +2,34 @@ import { Action } from '@ngrx/store';
 import { User, Credentials } from '../types';
 
 export enum ActionTypes {
-  Login = '[Auth] Login',
-  LoginSuccess = '[Auth] Login Success',
-  LoginFailure = '[Auth] Login Failure',
-  LoginRedirect = '[Auth] Login Redirect',
-  SaveUrl = '[Auth] Save Url'
+  LOGIN = '[Auth] Login',
+  LOGIN_SUCCESS = '[Auth] Login Success',
+  LOGIN_FAILURE = '[Auth] Login Failure',
+  LOGIN_REDIRECT = '[Auth] Login Redirect',
+  SAVE_URL = '[Auth] Save Url'
 }
 
 export class ActionLogin implements Action {
-  readonly type = ActionTypes.Login;
+  readonly type = ActionTypes.LOGIN;
   constructor(public payload: { credentials: Credentials }) {}
 }
 
 export class ActionLoginSuccess implements Action {
-  readonly type = ActionTypes.LoginSuccess;
+  readonly type = ActionTypes.LOGIN_SUCCESS;
   constructor(public payload: { user: User }) {}
 }
 
 export class ActionLoginFailure implements Action {
-  readonly type = ActionTypes.LoginFailure;
+  readonly type = ActionTypes.LOGIN_FAILURE;
   constructor(public payload: { error: any }) {}
 }
 
 export class ActionLoginRedirect implements Action {
-  readonly type = ActionTypes.LoginRedirect;
+  readonly type = ActionTypes.LOGIN_REDIRECT;
 }
 
 export class ActionSaveUrl implements Action {
-  readonly type = ActionTypes.SaveUrl;
+  readonly type = ActionTypes.SAVE_URL;
   constructor(public payload: { url?: string }) {}
 }
 
@@ -48,9 +48,9 @@ export const initialState: State = {
 export function authReducer(state: object = initialState, action: Actions) {
 
   switch (action.type) {
-    case ActionTypes.LoginSuccess:
+    case ActionTypes.LOGIN_SUCCESS:
       return {...state, user: action.payload.user};
-    case ActionTypes.SaveUrl:
+    case ActionTypes.SAVE_URL:
       return {...state, url: action.payload.url};
     default:
       return state;
