@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { State, ActionTypes as AuthActionTypes } from '../reducers/auth.reducer';
+import { State, ActionLogin } from '../reducers/auth.reducer';
 
 @Component({
   selector: 'app-page-login',
@@ -18,13 +18,10 @@ export class PageLoginComponent implements OnInit {
 
   handleSubmit(form: NgForm) {
     if (form.valid) {
-      this.store.dispatch({
-        type: AuthActionTypes.Login,
-        payload: {
-          username: form.value.username,
-          password: form.value.password
-        }
-      });
+      this.store.dispatch(new ActionLogin({
+        username: form.value.username,
+        password: form.value.password
+      }));
     }
   }
 }
