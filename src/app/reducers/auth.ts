@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User, Credentials } from '../models/user';
+import { User, Credentials } from '../types';
 
 export enum AuthActionTypes {
   Login = '[Auth] Login',

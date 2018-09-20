@@ -5,7 +5,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, tap, delay, exhaustMap} from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import { State, AuthActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth';
-import { Credentials } from '../models/user';
+import { Credentials } from '../types';
 
 @Injectable()
 export class AuthEffects {
