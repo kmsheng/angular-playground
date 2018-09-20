@@ -19,7 +19,7 @@ export class CounterComponent implements OnInit {
   ngOnInit() {
   }
 
-  increase() {
+  increment() {
     this.store.dispatch(new ActionIncrement());
   }
 
