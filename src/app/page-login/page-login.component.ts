@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { State, AuthActionTypes } from '../reducers/auth.reducer';
+import { State, ActionTypes as AuthActionTypes } from '../reducers/auth.reducer';
 
 @Component({
   selector: 'app-page-login',

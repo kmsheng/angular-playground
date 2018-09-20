@@ -4,7 +4,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of, timer } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, concatMap, tap, delay, debounce} from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { ActionDelayIncrement, ActionIncrement, CounterActionTypes.DELAY_INCREMENT } from '../reducers/counter.reducer';
+import { ActionDelayIncrement, ActionIncrement, ActionTypes } from '../reducers/counter.reducer';
 
 @Injectable()
 export class CounterEffects {
@@ -14,7 +14,7 @@ export class CounterEffects {
   // Listen for the 'INCREMENT' action
   @Effect()
   count$ = this.actions$.pipe(
-    ofType<ActionDelayIncrement>(CounterActionTypes.DELAY_INCREMENT),
+    ofType<ActionDelayIncrement>(ActionTypes.DELAY_INCREMENT),
     debounce(() => timer(1000)),
     concatMap(() => {
       return of(new ActionIncrement());

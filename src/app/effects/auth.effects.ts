@@ -4,7 +4,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of, throwError } from 'rxjs';
 import { filter, catchError, map, mergeMap, switchMap, tap, delay, exhaustMap} from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
-import { State, AuthActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth.reducer';
+import { State, ActionTypes, ActionLogin, ActionLoginSuccess, ActionLoginRedirect } from '../reducers/auth.reducer';
 import { Credentials } from '../types';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class AuthEffects {
 
   @Effect()
   login$ = this.actions$.pipe(
-    ofType<ActionLogin>(AuthActionTypes.Login),
+    ofType<ActionLogin>(ActionTypes.Login),
     map(action => action.payload),
     exhaustMap((credentials: Credentials) => {
       // fake login
@@ -31,7 +31,7 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   loginSuccess$ = this.actions$.pipe(
-    ofType<ActionLoginSuccess>(AuthActionTypes.LoginSuccess),
+    ofType<ActionLoginSuccess>(ActionTypes.LoginSuccess),
     tap(() => {
       this.store.pipe(select('auth')).subscribe(auth => {
         if (auth.url) {
@@ -43,7 +43,7 @@ export class AuthEffects {
 
   @Effect({ dispatch: false })
   loginRedirect$ = this.actions$.pipe(
-    ofType<ActionLoginRedirect>(AuthActionTypes.LoginRedirect),
+    ofType<ActionLoginRedirect>(ActionTypes.LoginRedirect),
     tap(action => {
       this.router.navigate(['/login']);
     })

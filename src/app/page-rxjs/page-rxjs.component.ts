@@ -24,7 +24,7 @@ export class PageRxjsComponent implements OnInit {
   ngOnInit() {
     fromEvent(this.input.nativeElement, 'keyup')
       .pipe(
-        map(event => event.target.value)
+        map(event => event.target.value),
         startWith(''),
         debounceTime(400),
         switchMap(id => {

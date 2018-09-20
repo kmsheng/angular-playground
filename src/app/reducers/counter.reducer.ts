@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-export enum CounterActionTypes {
+export enum ActionTypes {
   INCREMENT = '[Counter] INCREMENT',
   DECREMENT = '[Counter] DECREMENT',
   RESET = '[Counter] RESET',
@@ -8,22 +8,22 @@ export enum CounterActionTypes {
 }
 
 export class ActionIncrement implements Action {
-  readonly type = CounterActionTypes.INCREMENT;
+  readonly type = ActionTypes.INCREMENT;
   constructor() {}
 }
 
 export class ActionDecrement implements Action {
-  readonly type = CounterActionTypes.DECREMENT;
+  readonly type = ActionTypes.DECREMENT;
   constructor() {}
 }
 
 export class ActionReset implements Action {
-  readonly type = CounterActionTypes.RESET;
+  readonly type = ActionTypes.RESET;
   constructor() {}
 }
 
 export class ActionDelayIncrement implements Action {
-  readonly type = CounterActionTypes.DELAY_INCREMENT,
+  readonly type = ActionTypes.DELAY_INCREMENT,
   constructor() {}
 }
 
@@ -39,13 +39,13 @@ export function counterReducer(state: number = initialState, action: Actions) {
 
   switch (action.type) {
 
-    case CounterActionTypes.INCREMENT:
+    case ActionTypes.INCREMENT:
       return state + 1;
 
-    case CounterActionTypes.DECREMENT:
+    case ActionTypes.DECREMENT:
       return state - 1;
 
-    case CounterActionTypes.RESET:
+    case ActionTypes.RESET:
       return 0;
 
     default:
