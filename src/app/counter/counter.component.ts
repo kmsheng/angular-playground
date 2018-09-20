@@ -23,4 +23,8 @@ export class CounterComponent implements OnInit {
     this.store.dispatch(new ActionIncrement());
   }
 
+  delayIncrement() {
+    this.store.dispatch(new ActionDelayIncrement());
+  }
+
 }
