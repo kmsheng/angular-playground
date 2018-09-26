@@ -13,9 +13,9 @@ import { PageTodosComponent } from './page-todos/page-todos.component';
 import { PageHelloWorldComponent } from './page-hello-world/page-hello-world.component';
 import { PageCounterComponent } from './page-counter/page-counter.component';
 import { CounterComponent } from './counter/counter.component';
-import { counterReducer } from './reducers/counter.reducer';
-import { authReducer } from './reducers/auth.reducer';
-import { StoreModule } from '@ngrx/store';
+import { counterReducer, State as CounterState } from './reducers/counter.reducer';
+import { authReducer, State as AuthState } from './reducers/auth.reducer';
+import { StoreModule, MetaReducer } from '@ngrx/store';
 import { CounterEffects } from './effects/counter.effects';
 import { AuthEffects } from './effects/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
@@ -25,6 +25,15 @@ import { PageSecretComponent } from './page-secret/page-secret.component';
 import { PageLoginComponent } from './page-login/page-login.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { PageRxjsComponent } from './page-rxjs/page-rxjs.component';
+import { storeFreeze } from 'ngrx-store-freeze';
+import { environment } from '../environments/environment';
+
+export interface State {
+  counter: CounterState,
+  aith: AuthState
+}
+
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [storeFreeze]: [];
 
 @NgModule({
   declarations: [
